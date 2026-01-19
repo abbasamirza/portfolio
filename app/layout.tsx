@@ -6,6 +6,7 @@ import { Layout } from "@/types/global";
 import { Navbar } from "@/components/common/navbar";
 import { ThemeProvider } from "next-themes";
 import { StoreProvider } from "@/externals/redux/store-provider";
+import { Footer } from "@/components/common/footer";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: Layout) {
           <StoreProvider>
             <Navbar />
             <main className="container space-y-10 pt-20 pb-6">{children}</main>
+            <Footer />
           </StoreProvider>
         </ThemeProvider>
       </body>

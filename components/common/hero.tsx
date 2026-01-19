@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Typography } from "@/components/ui/typography";
 import { HeroSkillsSection } from "./hero-skills-section";
-import { HeroSocialsSection } from "./hero-socials-section";
+import { SocialsSection } from "./socials-section";
 import { ImagePaths } from "@/constants/image-paths";
 
 export const Hero = () => {
@@ -46,7 +46,7 @@ export const Hero = () => {
           Frontend by profession, aspiring full-stack by passion.
         </Typography>
         <HeroSkillsSection />
-        <HeroSocialsSection />
+        <SocialsSection />
       </div>
     </section>
   );

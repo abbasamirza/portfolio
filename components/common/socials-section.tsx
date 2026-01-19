@@ -4,12 +4,17 @@ import {
   Github,
   Linkedin02Icon,
   Mail01Icon,
+  Pdf02Icon,
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Button } from "@/components/ui/button";
 import { ExternalUrls } from "@/constants/urls";
 
-export const HeroSocialsSection = () => {
+interface Props {
+  hideResumeText?: boolean;
+}
+
+export const SocialsSection = ({ hideResumeText = false }: Props) => {
   const socials = [
     {
       href: ExternalUrls.Linkedin,
@@ -29,8 +34,11 @@ export const HeroSocialsSection = () => {
     <div className="flex items-center gap-3">
       <Link href="/resume.pdf" className="rounded-md">
         <Button variant="outline" size="lg">
-          Resume
-          <HugeiconsIcon icon={Download01Icon} className="size-4" />
+          {!hideResumeText && "Resume"}
+          <HugeiconsIcon
+            icon={hideResumeText ? Pdf02Icon : Download01Icon}
+            className="size-4"
+          />
         </Button>
       </Link>
       {socials.map((social) => (
