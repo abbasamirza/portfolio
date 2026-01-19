@@ -7,6 +7,7 @@ import { Navbar } from "@/components/common/navbar";
 import { ThemeProvider } from "next-themes";
 import { StoreProvider } from "@/externals/redux/store-provider";
 import { Footer } from "@/components/common/footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: Layout) {
         className={cn(geistSans.variable, geistMono.variable, "antialiased")}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Toaster />
           <StoreProvider>
             <Navbar />
             <main className="container space-y-10 pt-20 pb-6">{children}</main>
