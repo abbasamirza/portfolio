@@ -13,6 +13,17 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    rules: {
+      // Disallow import patterns "import ../*" and "import ../../*"
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: ["../**", "./../**"],
+        },
+      ],
+    },
+  },
 ]);
 
 export default eslintConfig;

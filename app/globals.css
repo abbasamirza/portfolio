@@ -124,3 +124,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= 56rem /* 896px */) {
+    max-width: 56rem; /* 896px */
+  }
+  @media (width >= 64rem /* 1024px */) {
+    max-width: 56rem; /* 896px */
+  }
+  @media (width >= 80rem /* 1280px */) {
+    max-width: 56rem; /* 896px */
+  }
+  @media (width >= 96rem /* 1536px */) {
+    max-width: 56rem; /* 896px */
+  }
+}

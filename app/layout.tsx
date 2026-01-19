@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Layout } from "@/types/global";
+import { Navbar } from "@/components/common/navbar";
+import { ThemeProvider } from "next-themes";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -26,11 +28,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Layout) {
   return (
-    <html lang="en" className={jetbrainsMono.variable}>
+    <html lang="en" className={cn(jetbrainsMono.variable)}>
       <body
         className={cn(geistSans.variable, geistMono.variable, "antialiased")}
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Navbar />
+          <main className="pt-14">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );
