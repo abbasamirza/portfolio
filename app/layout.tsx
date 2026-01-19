@@ -28,13 +28,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Layout) {
   return (
-    <html lang="en" className={cn(jetbrainsMono.variable)}>
+    <html
+      lang="en"
+      className={cn(jetbrainsMono.variable)}
+      suppressHydrationWarning
+    >
       <body
         className={cn(geistSans.variable, geistMono.variable, "antialiased")}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <main className="pt-14">{children}</main>
+          <main className="container pt-20 pb-6">{children}</main>
         </ThemeProvider>
       </body>
     </html>

@@ -1,13 +1,5 @@
-import { ComponentExample } from "@/components/component-example";
+import { Hero } from "@/components/common/hero";
 
 export default function Page() {
-  return (
-    <>
-      <ComponentExample />
-      <ComponentExample />
-      <ComponentExample />
-      <ComponentExample />
-      <ComponentExample />
-    </>
-  );
+  return <Hero />;
 }
