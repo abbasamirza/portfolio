@@ -22,6 +22,8 @@ import { ButtonWithSpinner } from "@/components/ui/button-with-spinner";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { SentIcon } from "@hugeicons/core-free-icons";
 import { toast } from "sonner";
+import Link from "next/link";
+import { Urls } from "@/constants/urls";
 
 export const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -123,7 +125,14 @@ export const ContactForm = () => {
         />
       </FieldGroup>
       <Typography className="text-xs sm:text-xs">
-        By submitting this form, I agree to the privacy policy.
+        By submitting this form, I agree to the{" "}
+        <Link
+          href={Urls.Privacy}
+          className="hover:text-foreground decoration-foreground/40 underline underline-offset-4 transition-colors"
+        >
+          privacy policy
+        </Link>
+        .
       </Typography>
       <ButtonWithSpinner
         type="submit"

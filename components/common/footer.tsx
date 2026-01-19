@@ -10,6 +10,13 @@ export const Footer = () => {
         © {new Date().getFullYear()}{" "}
         <Link href={Urls.Home} className="hover:text-foreground">
           abbas.dev
+        </Link>{" "}
+        |{" "}
+        <Link
+          href={Urls.Privacy}
+          className="hover:text-foreground font-semibold"
+        >
+          privacy?
         </Link>
       </Typography>
       <SocialsSection hideResumeText />

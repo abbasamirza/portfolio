@@ -1,6 +1,7 @@
 export const Urls = {
   Contact: "/contact",
   Home: "/",
+  Privacy: "/privacy",
   Projects: "/projects",
 } as const;
 
