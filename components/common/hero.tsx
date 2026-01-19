@@ -10,7 +10,22 @@ import { ImagePaths } from "@/constants/image-paths";
 export const Hero = () => {
   return (
     <section className="relative grid grid-cols-1 items-center gap-12 overflow-hidden min-[896px]:grid-cols-2">
-      <div className="space-y-4 min-[896px]:space-y-6">
+      <div className="relative w-full max-w-60 min-[896px]:order-2 min-[896px]:mx-auto">
+        <div className="relative aspect-square">
+          <div className="bg-muted/40 absolute inset-0 translate-x-4 translate-y-4 rounded-2xl" />
+          <div className="bg-muted/60 absolute inset-0 translate-x-2 translate-y-2 rounded-2xl" />
+          <div className="relative h-full w-full overflow-hidden rounded-2xl border">
+            <Image
+              src={ImagePaths.Me.AvatarPlaceholder}
+              alt="Profile photo"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
+      </div>
+      <div className="space-y-4 min-[896px]:order-1 min-[896px]:space-y-6">
         <Typography variant="h1">
           hi abbas here.{" "}
           <motion.span
@@ -32,21 +47,6 @@ export const Hero = () => {
         </Typography>
         <HeroSkillsSection />
         <HeroSocialsSection />
-      </div>
-      <div className="relative mx-auto w-full max-w-xs">
-        <div className="relative aspect-3/4">
-          <div className="bg-muted/40 absolute inset-0 translate-x-4 translate-y-4 rounded-2xl" />
-          <div className="bg-muted/60 absolute inset-0 translate-x-2 translate-y-2 rounded-2xl" />
-          <div className="relative h-full w-full overflow-hidden rounded-2xl border">
-            <Image
-              src={ImagePaths.Me.AvatarPlaceholder}
-              alt="Profile photo"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        </div>
       </div>
     </section>
   );

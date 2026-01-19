@@ -5,6 +5,7 @@ import { HomePageViews } from "@/constants/views";
 import { usePageView } from "@/hooks/use-page-view";
 import { HomePageView } from "@/types/views";
 import { WorkSection } from "./work-section";
+import { EducationSection } from "./education-section";
 
 export const MainSection = () => {
   const { homePageView, setPageView } = usePageView();
@@ -31,7 +32,7 @@ export const MainSection = () => {
         <WorkSection />
       </TabsContent>
       <TabsContent value={HomePageViews.Education}>
-        Change your password here.
+        <EducationSection />
       </TabsContent>
     </Tabs>
   );

@@ -52,13 +52,15 @@ export const MainSectionListDetails = ({ item }: Props) => {
                 <span>{detail.end}</span>
               </time>
             </div>
-            <ul className="mt-2 ml-4 list-outside list-disc dark:text-gray-200">
-              {detail.points.map((point, pointIndex) => (
-                <li key={pointIndex} className="pr-8 text-sm leading-relaxed">
-                  {point}
-                </li>
-              ))}
-            </ul>
+            {detail?.points && detail.points.length > 0 && (
+              <ul className="mt-2 ml-4 list-outside list-disc dark:text-gray-200">
+                {detail.points.map((point, pointIndex) => (
+                  <li key={pointIndex} className="pr-8 text-sm leading-relaxed">
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         ))}
       </div>

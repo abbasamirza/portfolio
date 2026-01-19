@@ -16,7 +16,7 @@ export interface MainSectionDetailItem {
   role: string;
   start: string;
   end: string;
-  points: string[];
+  points?: string[];
 }
 
 export interface MainSectionItem {

@@ -28,14 +28,14 @@ export const Navbar = () => {
             return (
               <div
                 key={item.href}
-                className="relative"
+                className="relative inline-block"
                 onMouseEnter={() => setHovered(item.href)}
                 onMouseLeave={() => setHovered(null)}
               >
                 <Link
                   href={item.href}
                   className={cn(
-                    "relative px-4 py-2 text-sm transition-colors",
+                    "relative block px-4 py-2 text-sm transition-colors",
                     active ? "text-foreground" : "text-muted-foreground",
                     "hover:text-foreground",
                     ZIndex.Legend,
@@ -43,18 +43,16 @@ export const Navbar = () => {
                 >
                   {item.label}
                 </Link>
-                <AnimatePresence>
+                <AnimatePresence mode="wait">
                   {(hovered === item.href || active) && (
                     <motion.span
                       layoutId="nav-pill"
                       className="bg-muted absolute inset-0 rounded-md"
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
                       transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 30,
+                        duration: 0.2,
                       }}
                     />
                   )}
