@@ -24,6 +24,8 @@ import { SentIcon } from "@hugeicons/core-free-icons";
 import { toast } from "sonner";
 import Link from "next/link";
 import { Urls } from "@/constants/urls";
+import { APIHandler } from "@/lib/api-handler";
+import { ApiEndpoints } from "@/constants/api-endpoints";
 
 export const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -38,16 +40,36 @@ export const ContactForm = () => {
     disabled: isSubmitting,
   });
 
-  const onSubmit = (data: ContactFormData) => {
+  const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
 
-    console.log("data", data);
+    try {
+      const result = await APIHandler.execute({
+        endPoint: ApiEndpoints.ContactForm,
+        method: "POST",
+        body: data,
+        cache: "no-cache",
+      });
 
-    setTimeout(() => {
-      toast.success("Message sent successfully!");
-      form.reset();
+      if (result instanceof Error) {
+        toast.error("Failed to send message. Please try again.");
+        return;
+      }
+
+      if (result.error) {
+        toast.error(
+          result.error || "Failed to send message. Please try again.",
+        );
+      } else {
+        toast.success("Message sent successfully!");
+        form.reset();
+      }
+    } catch (error) {
+      console.error("Contact form error:", error);
+      toast.error("An error occurred. Please try again later.");
+    } finally {
       setIsSubmitting(false);
-    }, 2000);
+    }
   };
 
   return (

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ExternalUrls, Urls } from "@/constants/urls";
+import { Gmail } from "@/constants/contact";
 
 export default function Page() {
   const [isLocked, setIsLocked] = useState<boolean>(true);
@@ -146,7 +147,7 @@ export default function Page() {
               href={ExternalUrls.Email}
               className="text-foreground decoration-foreground/40 hover:decoration-foreground underline underline-offset-4 transition-colors"
             >
-              abbasamirza2@gmail.com
+              {Gmail}
             </Link>{" "}
             or use the{" "}
             <Link
