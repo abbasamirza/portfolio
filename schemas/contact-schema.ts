@@ -8,7 +8,7 @@ export const ContactFormSchema = z.object({
   email: z.email("Invalid email address").min(1, "Email is required"),
   message: z
     .string()
-    .min(10, "Message must be at least 10 characters long")
+    .min(3, "Message must be at least 3 characters long")
     .max(3000, "Message must be at most 3000 characters long"),
 });
 

@@ -8,7 +8,7 @@ import {
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Button } from "@/components/ui/button";
-import { ExternalUrls } from "@/constants/urls";
+import { ExternalUrls, Urls } from "@/constants/urls";
 
 interface Props {
   hideResumeText?: boolean;
@@ -32,7 +32,13 @@ export const SocialsSection = ({ hideResumeText = false }: Props) => {
 
   return (
     <div className="flex items-center gap-3">
-      <Link href="/resume.pdf" className="rounded-md">
+      <Link
+        href={Urls.Resume}
+        className="rounded-md"
+        download
+        target="_blank"
+        rel="noreferrer"
+      >
         <Button variant="outline" size="lg">
           {!hideResumeText && "Resume"}
           <HugeiconsIcon

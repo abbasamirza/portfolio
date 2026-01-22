@@ -3,6 +3,7 @@ export const Urls = {
   Home: "/",
   Privacy: "/privacy",
   Projects: "/projects",
+  Resume: "/resume.pdf",
 } as const;
 
 export const ExternalUrls = {
