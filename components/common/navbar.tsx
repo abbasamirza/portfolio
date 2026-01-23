@@ -35,7 +35,7 @@ export const Navbar = () => {
                 <Link
                   href={item.href}
                   className={cn(
-                    "relative block px-4 py-2 text-sm transition-colors",
+                    "relative block px-4 py-2 text-xs transition-colors sm:text-sm",
                     active ? "text-foreground" : "text-muted-foreground",
                     "hover:text-foreground",
                     ZIndex.Legend,
